@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let isRun = true;
+        let isGreater = 10 > 5;
+
+        // undefined type
+        let a;
+        let b = undefined;
+
+        console.log(typeof a);
+        console.log(typeof b);
+
+        // null => object type
+        let c = null;
+        console.log(typeof c);
+
+        console.log(a + 1, c + 1, a + "1", c + "1");
+
+        console.log("1" === 1); // 자료형, 값 비교
+        console.log("1" == 1); // 값 비교
+        console.log(a === c);
+        console.log(a == c);
+
+        // object type
+        const obj = {num : 1, name : '홍길동', isMan : true};
+        // array type
+        const names = ['홍길동', '홍길동2', '홍길동3']
+        console.log(typeof names); // object
+
+        // function type
+        //함수식
+        const f = function() {
+
+        }
+
+        // 선언적 함수
+        function sum() {
+
+        }
+
+        console.log(typeof f);
+        console.log(typeof sum);
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

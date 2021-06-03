@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const nums1 = [];
+        nums1[0] = 100;
+        nums1[1] = undefined;
+        nums1[2] = true;
+        nums1[3] = "안녕";
+        nums1.push(0);
+
+        for (let i = 0; i < nums1.length; ++i) {
+            console.log(nums1[i]);
+        }
+
+        for (let value of nums1) {
+            console.log(value);
+        }
+
+        nums1.forEach(function(Element) {
+            console.log(Element);
+        });
+
+        nums1.forEach(function(value, index) {
+            console.log(value, index);
+        });
+
+        nums1.forEach((value, index) => {
+            console.log(value, index);
+        });
+
+        nums1[50] = 'test';
+
+        for(let value of nums1) {
+            console.log(value);
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
