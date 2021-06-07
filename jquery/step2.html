@@ -16,16 +16,25 @@
             //$('li:even').addClass("s");
             //$('li:odd').addClass("s");
             //$('li:gt(2)').addClass("s");
-            $('li:lt(2)').addClass("s");
+            //$('li:lt(2)').addClass("s");
+            //$('li').eq(0).addClass("s");
+			//$('li').first().addClass("s");
+            //$('li').not(':even').addClass("s");
+            $('li').each(function(index, element) {
+				console.log(index + "," +  $(element).text())
+			});
+			$('li').each(function(index) {
+				console.log(index + "," +  $(this).text())
+			});
             
-            
-            
-            
-            
-            
-            
-            
-            
+			
+            //$('#root').children().addClass("s");
+            //$('#root > div').addClass("s");
+            $('li').closest('div').addClass("s");
+            //$('#root').find('li').first().nextAll().html('li test');
+            //$('#root').find('li').parent().addClass("s");
+			//$('#root').find('li').parent().addClass("s");
+
             /*
             document.getElementById("btn")
             .addEventListener("click",function(){

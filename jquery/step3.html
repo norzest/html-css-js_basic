@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+
+    <style>
+        div {
+            border : 1px solid red;
+        }
+
+        p {
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        $(function() {
+            $('div').prepend('<strong> hi1 </strong>');
+            $('<strong> hi1 </strong>').prependTo('div'); // 위와 같음
+            $('div').append('<strong> hi2 </strong>');
+            $('<strong> hi2 </strong>').appendTo('div'); // 위와 같음
+            $('div').after('<strong> hi2 </strong>');
+            $('div').before('<strong> hi1 </strong>');
+            //$('div > p').text('<strong> 제이쿼리 </strong>');
+            $('div > p').html('<strong> 제이쿼리 </strong>');
+            alert($('div > p').text());
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>jquery</p>
+    </div>
+    
+</body>
+</html>
