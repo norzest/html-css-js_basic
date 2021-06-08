@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+
+    <script>
+        function getToday() {
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = ("0" + (1 + date.getMonth())).slice(-2);
+            let day = ("0" + date.getDate()).slice(-2);
+
+            return year + "-" + month + "-" + day;
+        }
+
+        function getMosquito(date) {
+            $.ajax({
+                url : 'http://openapi.seoul.go.kr:8088/494b594c64646172313039684f6c474f/json/MosquitoStatus/1/5/' + date,
+                type : 'GET',
+                dataType : 'json',
+                error : function(){
+                    alert('error')
+                },
+                success : function(json){
+                    console.log(JSON.stringify(json));
+                }
+            }); // end of ajax            
+        }
+
+        function getTrafficAcc() {
+            $.ajax({
+                url : "http://apis.data.go.kr/B552061/accidentRiskArea/getRestAccidentRiskArea?ServiceKey=uzqVSGAn51ZoLPRRxN3%2BrS47DIR%2FD7HyH1lSAzGAHSAqhq4zjnlcq%2FpPlCLyApT8M%2B4VQ%2BHMHvSZVGdSE%2FjcrQ%3D%3D&searchYearCd=2017&siDo=11&guGun=680&numOfRows=10&pageNo=1",
+                type : 'GET',
+                dataType : 'xml',
+                error : function(){
+                    alert('error')
+                },
+                success : function(xml){
+                    console.log('h');
+                }
+            }); // end of ajax            
+        }
+        
+        $(function(){
+            //getMosquito(getToday());
+            getTrafficAcc();
+        }); // end of onloading
+    </script>
+</head>
+<body>
+    <div id = "sel">
+
+    </div>
+</body>
+</html>
