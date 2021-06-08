@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery-3.6.0.js"></script>
+
+    <title>Document</title>
+
+    <script>
+        const xhr = new XMLHttpRequest();
+        $(function(){
+            $('#btn').click(function(){
+                let url = "data.json";
+                xhr.open('GET', url, true); // 비동기식
+                xhr.send(null); // get 방식일때는 매개변수에 null
+                xhr.onreadystatechange = function() {
+                    // callback method
+                    // 자동으로 호출되는 함수
+                    if(xhr.readyState==4 && xhr.status==200) {
+                        //정상적으로 처리되었다면
+
+                        const json = JSON.parse(xhr.responseText);
+                        let html = "<ul>";
+                        for(const obj of json.cafelist) {
+                            html += "<li>" + obj.name + 
+                                "(" + obj.clubid +  ")</li>";
+                        }
+                        html += "</ul>";
+                        $('#sel').append(html);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn">가져오기</button>
+    <div id="sel">
+
+    </div>
+</body>
+</html>

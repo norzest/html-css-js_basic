@@ -1,0 +1,7 @@
+{
+    "cafelist" : [
+        {"name" : "Lee", "clubid":"Imp1011"},
+        {"name" : "Noh", "clubid":"nmh1011"},
+        {"name" : "Kim", "clubid":"kdh1011"}
+    ]
+}
