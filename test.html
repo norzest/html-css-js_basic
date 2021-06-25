@@ -31,9 +31,9 @@
             }); // end of ajax            
         }
 
-        function getTrafficAcc() {
+        function getBicycle() {
             $.ajax({
-                url : "http://apis.data.go.kr/B552061/accidentRiskArea/getRestAccidentRiskArea?ServiceKey=uzqVSGAn51ZoLPRRxN3%2BrS47DIR%2FD7HyH1lSAzGAHSAqhq4zjnlcq%2FpPlCLyApT8M%2B4VQ%2BHMHvSZVGdSE%2FjcrQ%3D%3D&searchYearCd=2017&siDo=11&guGun=680&numOfRows=10&pageNo=1",
+                url : "http://apis.data.go.kr/B552061/frequentzoneBicycle/getRestFrequentzoneBicycle?serviceKey=uzqVSGAn51ZoLPRRxN3%2BrS47DIR%2FD7HyH1lSAzGAHSAqhq4zjnlcq%2FpPlCLyApT8M%2B4VQ%2BHMHvSZVGdSE%2FjcrQ%3D%3D&searchYearCd=2015&siDo=11&guGun=110&type=json&numOfRows=1&pageNo=1",
                 type : 'GET',
                 dataType : 'xml',
                 error : function(){
@@ -47,7 +47,9 @@
         
         $(function(){
             //getMosquito(getToday());
-            getTrafficAcc();
+            getBicycle();
+
+
         }); // end of onloading
     </script>
 </head>
